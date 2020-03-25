@@ -8,16 +8,18 @@ namespace Tasks
     {
         public static void Test(int a, int b)
         {
-            CancellationTokenSource cts = new CancellationTokenSource();
-            CancellationToken token = cts.Token;
-
+            Console.WriteLine();
             Console.WriteLine("Test B has been started");
 
+            CancellationTokenSource cts = new CancellationTokenSource();
+            CancellationToken token = cts.Token;
+            
             Task<int> task = new Task<int>(() =>
             {
                 token.ThrowIfCancellationRequested();
 
                 Task.Delay(1000).Wait();
+
                 return a + b;
             }, token);
 

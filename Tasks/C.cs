@@ -8,26 +8,28 @@ namespace Tasks
     {
         public static void Test(int a, int b)
         {
-            CancellationTokenSource cts = new CancellationTokenSource();
-            CancellationToken token = cts.Token;
+            Console.WriteLine();
+            Console.WriteLine("Test C has been started");
 
-            Console.WriteLine("Test B has been started");
-
-            Task<int> task = new Task<int>(() =>
+            var task = Task<int>.Run(() =>
             {
                 Task.Delay(1000).Wait();
-                return a + b;
-            }, token);
+                throw new Exception("Intentional exception");
 
-            cts.Cancel();
+                return a + b;
+            });
 
             try
             {
-                task.Start();
+                Console.WriteLine($"{a} + {b} = {task.Result}");
             }
-            catch { }
-
-            Console.WriteLine($"Current task status is {task.Status}");
+            catch(AggregateException aEx)
+            {
+                foreach (var ex in aEx.InnerExceptions)
+                {
+                    Console.WriteLine($"Task exception is: {ex.Message}");
+                }
+            }
 
             Console.WriteLine("Press Enter to Continue");
             Console.ReadKey();

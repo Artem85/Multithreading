@@ -6,8 +6,16 @@ namespace Tasks
     {
         static void Main(string[] args)
         {
-            A.Test(8, 17);
-            B.Test(8, 17);
+            int a = 8;
+            int b = 17;
+
+            //A.Test(a, b);
+            //B.Test(a, b);
+            //C.Test(a, b);
+            //D.Test();
+            //E.Test();
+            //F.Test();
+            G.Test();
         }
     }
 }

@@ -5,7 +5,7 @@ namespace AsyncAwait
 {
     public class C
     {
-        public static async void Test()
+        public static void Test()
         {
             Console.WriteLine("Test C has been started");
 

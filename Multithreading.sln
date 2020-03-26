@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks", "Tasks\Tasks.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncAwait", "AsyncAwait\AsyncAwait.csproj", "{658257DC-E3A7-4600-AA19-EAAAA2765A7B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Synchronization", "Synchronization\Synchronization.csproj", "{BB4C9A1D-6EB0-4A1E-8364-A9420865C556}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,5 +21,9 @@ Global
 		{658257DC-E3A7-4600-AA19-EAAAA2765A7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{658257DC-E3A7-4600-AA19-EAAAA2765A7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{658257DC-E3A7-4600-AA19-EAAAA2765A7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB4C9A1D-6EB0-4A1E-8364-A9420865C556}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB4C9A1D-6EB0-4A1E-8364-A9420865C556}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB4C9A1D-6EB0-4A1E-8364-A9420865C556}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB4C9A1D-6EB0-4A1E-8364-A9420865C556}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

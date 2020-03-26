@@ -20,12 +20,13 @@ namespace Tasks
 
                 Console.WriteLine($"Some work in main thread. Thread id is {Thread.CurrentThread.ManagedThreadId}");
 
-                while (!task.IsCompleted) { }
+                task.Wait();
+                //while (!task.IsCompleted) { }
 
-                if (task.IsFaulted)
-                {
-                    throw task.Exception;
-                }
+                //if (task.IsFaulted)
+                //{
+                //    throw task.Exception;
+                //}
             }
             catch(AggregateException aEx)
             {

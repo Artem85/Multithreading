@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncAwait", "AsyncAwait\As
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Synchronization", "Synchronization\Synchronization.csproj", "{BB4C9A1D-6EB0-4A1E-8364-A9420865C556}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParallelExecution", "ParallelExecution\ParallelExecution.csproj", "{FB08497D-B4A8-4B18-B359-140F69C405A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,5 +27,9 @@ Global
 		{BB4C9A1D-6EB0-4A1E-8364-A9420865C556}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB4C9A1D-6EB0-4A1E-8364-A9420865C556}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB4C9A1D-6EB0-4A1E-8364-A9420865C556}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB08497D-B4A8-4B18-B359-140F69C405A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB08497D-B4A8-4B18-B359-140F69C405A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB08497D-B4A8-4B18-B359-140F69C405A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB08497D-B4A8-4B18-B359-140F69C405A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -8,8 +8,6 @@ namespace ParallelExecution
 {
     class Program
     {
-        static int totalAndCount;
-
         static void Main(string[] args)
         {
             string projectDir = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
@@ -34,27 +32,29 @@ namespace ParallelExecution
 
             //PLINQ
             var processedFiles = files
-                                .AsParallel();
+                                .AsParallel()
+                                .Select(t => new
+                                {
+                                    fileName = t,
+                                    andCount = GetAndCount(t)
+                                });
 
+            int totalAndCountPLINQ = 0;
             foreach (var processedFile in processedFiles)
             {
-                GetAndCount(processedFile);
+                Console.WriteLine($"File {processedFile.fileName} contains {processedFile.andCount} 'and'");
+                totalAndCountPLINQ += processedFile.andCount;
             }
 
-            Console.WriteLine($"Total 'and' count is {totalAndCount}");
+            Console.WriteLine($"Total 'and' count is {totalAndCountPLINQ}");
             Console.ReadKey();
         }
 
-        private static void GetAndCount(string file)
+        private static int GetAndCount(string file)
         {
-            int andCount = 0;
-
             string text = File.ReadAllText(file);
             var andMatches = Regex.Matches(text, "and");
-            andCount = andMatches.Count;
-
-            Console.WriteLine($"File {file} contains {andCount} 'and'");
-            totalAndCount += andCount;
+            return andMatches.Count;
         }
     }
 }
